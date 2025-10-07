@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>ULTRAReplay</AssemblyName>
+    <Product>ULTRAReplay</Product>
+    <Version>1.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <RestoreAdditionalProjectSources>
+      https://api.nuget.org/v3/index.json;
+      https://nuget.bepinex.dev/v3/index.json;
+      https://nuget.samboy.dev/v3/index.json
+    </RestoreAdditionalProjectSources>
+    <RootNamespace>ULTRAReplay</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="lib/Assembly-CSharp.dll" />
+    <Reference Include="lib/UnityEngine.dll" />
+    <Reference Include="lib/UnityEngine.CoreModule.dll" />
+    <Reference Include="lib/BepInEx.dll" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+  <Exec Command="rm -r /home/silli/.local/share/Steam/steamapps/common/ULTRAKILL/BepInEx/plugins/ULTRAReplay/" />
+  <Exec Command="mkdir /home/silli/.local/share/Steam/steamapps/common/ULTRAKILL/BepInEx/plugins/ULTRAReplay/" />
+  <Exec Command="cp /home/silli/Projects/Coding/ULTRAReplay/bin/Debug/netstandard2.1/ULTRAReplay.dll /home/silli/.local/share/Steam/steamapps/common/ULTRAKILL/BepInEx/plugins/ULTRAReplay/" />
+  </Target>
+</Project>

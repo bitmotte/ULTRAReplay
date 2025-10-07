@@ -1,0 +1,6 @@
+/home/silli/Projects/Coding/ULTRAFreeCam/obj/Debug/netstandard2.0/ULTRAReplay.csproj.AssemblyReference.cache
+/home/silli/Projects/Coding/ULTRAFreeCam/obj/Debug/netstandard2.0/MyPluginInfo.cs
+/home/silli/Projects/Coding/ULTRAFreeCam/obj/Debug/netstandard2.0/ULTRAReplay.GeneratedMSBuildEditorConfig.editorconfig
+/home/silli/Projects/Coding/ULTRAFreeCam/obj/Debug/netstandard2.0/ULTRAReplay.AssemblyInfoInputs.cache
+/home/silli/Projects/Coding/ULTRAFreeCam/obj/Debug/netstandard2.0/ULTRAReplay.AssemblyInfo.cs
+/home/silli/Projects/Coding/ULTRAFreeCam/obj/Debug/netstandard2.0/ULTRAReplay.csproj.CoreCompileInputs.cache

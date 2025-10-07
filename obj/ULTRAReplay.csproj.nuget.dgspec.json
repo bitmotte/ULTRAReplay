@@ -1,0 +1,71 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/silli/Projects/Coding/ULTRAReplay/ULTRAReplay.csproj": {}
+  },
+  "projects": {
+    "/home/silli/Projects/Coding/ULTRAReplay/ULTRAReplay.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/silli/Projects/Coding/ULTRAReplay/ULTRAReplay.csproj",
+        "projectName": "ULTRAReplay",
+        "projectPath": "/home/silli/Projects/Coding/ULTRAReplay/ULTRAReplay.csproj",
+        "packagesPath": "/home/silli/.nuget/packages/",
+        "outputPath": "/home/silli/Projects/Coding/ULTRAReplay/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/silli/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "/usr/lib/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.bepinex.dev/v3/index.json": {},
+          "https://nuget.samboy.dev/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.110/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
