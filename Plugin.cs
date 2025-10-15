@@ -20,6 +20,6 @@ public class Plugin : BaseUnityPlugin
 
     void OnSceneLoad(Scene scene, LoadSceneMode mode)
     {
-        RecordingManager.StartRecording();
+        RecordingManager.InitializeHotkeyCheck();
     }
 }

@@ -29,3 +29,8 @@
 /home/silli/Projects/Coding/ULTRAReplay/obj/Debug/netstandard2.1/ULTRAReplay.dll
 /home/silli/Projects/Coding/ULTRAReplay/obj/Debug/netstandard2.1/ULTRAReplay.pdb
 /home/silli/Projects/Coding/ULTRAReplay/obj/Debug/netstandard2.1/ULTRAReplay.sourcelink.json
+/home/silli/Projects/Coding/ULTRAReplay/bin/Debug/netstandard2.1/UnityEngine.UI.dll
+/home/silli/Projects/Coding/ULTRAReplay/bin/Debug/netstandard2.1/NewBlood.LegacyInput.dll
+/home/silli/Projects/Coding/ULTRAReplay/bin/Debug/netstandard2.1/Unity.InputSystem.dll
+/home/silli/Projects/Coding/ULTRAReplay/bin/Debug/netstandard2.1/UnityEngine.InputLegacyModule.dll
+/home/silli/Projects/Coding/ULTRAReplay/bin/Debug/netstandard2.1/UnityEngine.InputModule.dll
