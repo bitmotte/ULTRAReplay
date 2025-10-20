@@ -6,7 +6,10 @@ namespace ULTRAReplay;
 static class RecordingManager
 {
     static public GameObject player;
-    static public List<Vector3> playerPositionVectors = new List<Vector3> { };
+    static public GameObject camera;
+    static public List<Vector3> playerPositionVectors = [];
+    static public List<Quaternion> playerRotationQuaternions = [];
+    static public List<Quaternion> cameraRotationQuaternions = [];
     static GameObject recorder;
     static GameObject checker;
 
@@ -17,6 +20,8 @@ static class RecordingManager
         checker = new();
         checker.AddComponent<HotkeyCheck>();
         player = GameObject.Find("Player");
+        camera = player.transform.GetChild(4).gameObject;
+        Plugin.Logger.LogInfo(camera);
     }
 
     public static void StartRecording()
@@ -29,6 +34,6 @@ static class RecordingManager
 
     public static void StopRecording()
     {
-        recorder = null;
+        GameObject.Destroy(recorder);
     }
 }

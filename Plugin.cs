@@ -1,4 +1,5 @@
-﻿using BepInEx;
+﻿using System;
+using BepInEx;
 using BepInEx.Logging;
 
 using UnityEngine.SceneManagement;
@@ -20,6 +21,13 @@ public class Plugin : BaseUnityPlugin
 
     void OnSceneLoad(Scene scene, LoadSceneMode mode)
     {
-        RecordingManager.InitializeHotkeyCheck();
+        try 
+        {
+            RecordingManager.InitializeHotkeyCheck();
+        }
+        catch (Exception)
+        {
+            Plugin.Logger.LogInfo("cannot initialize hotkeys, probably not in-level");
+        }
     }
 }

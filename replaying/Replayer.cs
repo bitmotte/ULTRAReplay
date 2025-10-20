@@ -6,15 +6,23 @@ namespace ULTRAReplay;
 class Replayer : MonoBehaviour
 {
     int i = 0;
-    void Update()
+    GameObject cameraPivot;
+    void Awake() {
+        cameraPivot = gameObject.transform.GetChild(0).gameObject;
+    }
+    void FixedUpdate()
     {
         if(i < RecordingManager.playerPositionVectors.Count)
         {
             gameObject.transform.position = RecordingManager.playerPositionVectors.ToArray()[i];
+            gameObject.transform.rotation = RecordingManager.playerRotationQuaternions.ToArray()[i];
+            cameraPivot.transform.rotation = RecordingManager.cameraRotationQuaternions.ToArray()[i];
             i++;
         } else
         {
-            RecordingManager.playerPositionVectors = new List<Vector3> { };
+            RecordingManager.playerPositionVectors = [];
+            RecordingManager.playerRotationQuaternions = [];
+            RecordingManager.cameraRotationQuaternions = [];
             Destroy(gameObject);
         }
     }
