@@ -1,7 +1,7 @@
 ﻿using System;
 using BepInEx;
 using BepInEx.Logging;
-
+using HarmonyLib;
 using UnityEngine.SceneManagement;
 
 namespace ULTRAReplay;
@@ -16,12 +16,15 @@ public class Plugin : BaseUnityPlugin
         // Plugin startup logic
         Logger = base.Logger;
         Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
+
+        var harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
+        harmony.PatchAll();
         SceneManager.sceneLoaded += OnSceneLoad;
     }
 
     void OnSceneLoad(Scene scene, LoadSceneMode mode)
     {
-        try 
+        try
         {
             RecordingManager.InitializeHotkeyCheck();
         }

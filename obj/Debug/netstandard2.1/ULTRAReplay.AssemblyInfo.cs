@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ULTRAReplay")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8eb81e75dde4f85e8110cae874d7b55ce75aac8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ab8c4166b02fd739f8a531dfef5d3d19d946ab5")]
 [assembly: System.Reflection.AssemblyProductAttribute("ULTRAReplay")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ULTRAReplay")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

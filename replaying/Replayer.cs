@@ -6,9 +6,8 @@ namespace ULTRAReplay;
 class Replayer : MonoBehaviour
 {
     int i = 0;
-    GameObject cameraPivot;
     void Awake() {
-        cameraPivot = gameObject.transform.GetChild(0).gameObject;
+        ReplayManager.cameraPivot = gameObject.transform.GetChild(0).gameObject;
     }
     void FixedUpdate()
     {
@@ -16,7 +15,15 @@ class Replayer : MonoBehaviour
         {
             gameObject.transform.position = RecordingManager.playerPositionVectors.ToArray()[i];
             gameObject.transform.rotation = RecordingManager.playerRotationQuaternions.ToArray()[i];
-            cameraPivot.transform.rotation = RecordingManager.cameraRotationQuaternions.ToArray()[i];
+            ReplayManager.cameraPivot.transform.rotation = RecordingManager.cameraRotationQuaternions.ToArray()[i];
+            
+            foreach (int frame in RecordingManager.shootTimings)
+            {
+                if (i == frame)
+                {
+                    ReplayManager.replayRevolver.ShootPrimary();
+                }
+            }
             i++;
         } else
         {

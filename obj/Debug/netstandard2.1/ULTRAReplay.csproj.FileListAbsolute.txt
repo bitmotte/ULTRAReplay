@@ -34,3 +34,6 @@
 /home/silli/Projects/Coding/ULTRAReplay/bin/Debug/netstandard2.1/Unity.InputSystem.dll
 /home/silli/Projects/Coding/ULTRAReplay/bin/Debug/netstandard2.1/UnityEngine.InputLegacyModule.dll
 /home/silli/Projects/Coding/ULTRAReplay/bin/Debug/netstandard2.1/UnityEngine.InputModule.dll
+/home/silli/Projects/Coding/ULTRAReplay/bin/Debug/netstandard2.1/UnityEngine.PhysicsModule.dll
+/home/silli/Projects/Coding/ULTRAReplay/bin/Debug/netstandard2.1/0Harmony20.dll
+/home/silli/Projects/Coding/ULTRAReplay/bin/Debug/netstandard2.1/0Harmony.dll

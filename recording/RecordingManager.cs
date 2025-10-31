@@ -7,9 +7,14 @@ static class RecordingManager
 {
     static public GameObject player;
     static public GameObject camera;
+
     static public List<Vector3> playerPositionVectors = [];
     static public List<Quaternion> playerRotationQuaternions = [];
     static public List<Quaternion> cameraRotationQuaternions = [];
+
+    static public List<int> shootTimings = [];
+    static public bool gunIsShot;
+
     static GameObject recorder;
     static GameObject checker;
 
@@ -21,7 +26,6 @@ static class RecordingManager
         checker.AddComponent<HotkeyCheck>();
         player = GameObject.Find("Player");
         camera = player.transform.GetChild(4).gameObject;
-        Plugin.Logger.LogInfo(camera);
     }
 
     public static void StartRecording()

@@ -4,8 +4,16 @@ namespace ULTRAReplay;
 
 static class ReplayManager
 {
+    public static GameObject replayPlayer;
+    public static ReplayRevolver replayRevolver;
+    public static GameObject cameraPivot;
+    public static Replayer replayer;
+
     static GameObject MakeReplayPlayer()
     {
+        
+        //guns
+        
         GameObject replayPlayer = new("replay player");
         replayPlayer.transform.position = Vector3.zero;
         replayPlayer.AddComponent<MeshRenderer>();
@@ -24,13 +32,21 @@ static class ReplayManager
         replayCamera.transform.localScale = new Vector3(.5f, .5f, 1f);
         replayCamera.transform.position = new Vector3(0, 1, .5f);
 
+        //guns
+
+        GameObject replayRevolverObj = new("replayRevolver");
+        replayRevolverObj.transform.SetParent(replayCamera.transform);
+        replayRevolverObj.transform.localPosition = new();
+        replayRevolver = replayRevolverObj.AddComponent<ReplayRevolver>();
+
+
         return replayPlayer;
     }
     
     public static void ReplayRecording()
     {
-        GameObject replayPlayer = MakeReplayPlayer();
+        replayPlayer = MakeReplayPlayer();
         
-        replayPlayer.AddComponent<Replayer>();
+        replayer = replayPlayer.AddComponent<Replayer>();
     }
 }

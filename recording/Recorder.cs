@@ -1,9 +1,18 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.PlayerLoop;
 
 namespace ULTRAReplay;
 
 class Recorder : MonoBehaviour
 {
+    int frame;
+    void Awake()
+    {
+        RecordingManager.gunIsShot = false;
+    }
+
     void FixedUpdate()
     {
         Vector3 playerPosition = RecordingManager.player.transform.position;
@@ -12,5 +21,16 @@ class Recorder : MonoBehaviour
         RecordingManager.playerPositionVectors.Add(playerPosition);
         RecordingManager.playerRotationQuaternions.Add(playerRotation);
         RecordingManager.cameraRotationQuaternions.Add(cameraRotation);
+
+        frame++;
+    }
+
+    void Update()
+    {
+        if (RecordingManager.gunIsShot == true)
+        {
+            RecordingManager.shootTimings.Add(frame);
+            RecordingManager.gunIsShot = false;
+        }
     }
 }
