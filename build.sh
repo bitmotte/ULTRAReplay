@@ -9,6 +9,7 @@ prompt_path() {
     else
         echo "invalid path! ! !"
         if [ "$firstattempt" = true ]; then
+            echo ""
             echo "tip: make sure that you input the ROOT"
             echo "bepinex path, NOT the plugins folder."
             echo "for example: steampath/ULTRAKILL/BepInEx"
@@ -34,14 +35,14 @@ fi
 echo ""
 echo "building. . ."
 dotnet build "ULTRAReplay.sln"
-echo "moving files."
 
-userpath= cat "./resources/buildsettings"
-pluginpath= echo "${userpath}plugins/"
-echo "${pluginpath}ULTRAReplay"
-
-if [ -d "${pluginpath}ULTRAReplay" ]; then
-    echo "replay"
-else
-    echo "no"
+userpath=$(< "./resources/buildsettings" )
+if [ -d "${userpath}plugins/ULTRAReplay/" ]; then
+    echo "destroying existing files"
+    rm -r -f "${userpath}plugins/ULTRAReplay/"
 fi
+
+echo "copying build to ultrakill folders"
+mkdir "${userpath}plugins/ULTRAReplay/"
+cp "./bin/Debug/netstandard2.1/bitmotte.ULTRAReplay.dll" "${userpath}plugins/ULTRAReplay/"
+echo "done! ! !"

@@ -13,11 +13,14 @@ Proof of concept : https://github.com/bitmotte/ULTRAReplay-Legacy
   There are no released builds yet. . . you must build yourself.
   
   See build instructions to know how,then come back to see how to run the mod.
+  
+  If you use the build script, no need to go back : - ]
 
+  ⠀
+  ⠀
+  ⠀
 
-
-
-  . . .If you have built the project, very good. . .
+  . . .If you have built the project manually, very good. . .
   
   navigate from project root : ULTRAReplay (root) > bin > Debug > netstandard2.1 . . .
   
@@ -29,14 +32,20 @@ Proof of concept : https://github.com/bitmotte/ULTRAReplay-Legacy
 <details>
 <summary>Build Instructions. . .</summary>
 
-### NOTICE : The build script is nonfunctional currently. . . I do not like bash. . .
-
 To build. . . you must install .NET SDK 10,and git.
 
 Using the git, you must clone the repository to a folder,using the command `git clone https://github.com/bitmotte/ULTRAReplay.git` in your terminal.
 
-Once this is done,navigate to the ULTRAReplay folder that git has made for you,
+Now,you can either run the build script. . . ( i'm sure you'll be able to figure it out : - ] )
+
+. . . Or build it manually. Instructions to build manually are below : 
+
+<details>
+<summary>Manual Instructions. . .</summary>
+
+Now,navigate to the ULTRAReplay folder that git has made for you,
 and run `dotnet build`
 
 You are done. . . if you wish to install, go to run instructions. . .
+</details>
 </details>
