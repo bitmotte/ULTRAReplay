@@ -1,5 +1,7 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace ULTRAReplay;
 
@@ -13,5 +15,19 @@ public class Plugin : BaseUnityPlugin
         // Plugin startup logic
         Logger = base.Logger;
         Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
+
+        SceneManager.sceneLoaded += OnSceneLoad;
+    }
+
+    void OnSceneLoad(Scene scene, LoadSceneMode mode)
+    {
+        Init();
+    }
+
+    static void Init()
+    {
+        Logger.LogInfo("Initializing ULTRAReplay");
+        GameObject init = new("ULTRAReplay Initializer");
+        init.AddComponent<ULTRAReplayInit>();
     }
 }
