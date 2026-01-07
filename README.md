@@ -4,6 +4,8 @@ Record and rewatch your ULTRAKILL gameplay from a new perspective.
 ULTRAReplay lets you record,edit,and export your ULTRAKILL gameplay. . .
 It is a work in progress,nothing has been done yet but that will change very very soon. . .
 
+Currently on a small hiatus because I wish to finish LessScaryMannequins. . .
+
 Proof of concept : https://github.com/bitmotte/ULTRAReplay-Legacy
 
 
