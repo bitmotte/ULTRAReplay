@@ -21,27 +21,25 @@ public class DebugUpdater : MonoBehaviour
 
         MonoSingleton<CheatsManager>.Instance.RenderCheatsInfo();
         StringBuilder builder = new(MonoSingleton<CheatsController>.Instance.cheatsInfo.text);
-        builder.AppendLine("frame delta event : values");
-        builder.AppendLine("frame delta event : values");
-        builder.AppendLine("frame delta event : values");
-        builder.AppendLine("frame delta event : values");
-        builder.AppendLine("frame delta event : values");
-        builder.AppendLine("frame delta event : values");
+        //this is temporary
+        builder.AppendLine("frame delta event values");
+        builder.AppendLine("frame delta event values");
+        builder.AppendLine("frame delta event values");
+        builder.AppendLine("frame delta event values");
+        builder.AppendLine("frame delta event values");
+        builder.AppendLine("frame delta event values");
+        builder.AppendLine("frame delta event values");
+        builder.AppendLine("frame delta event values");
+        builder.AppendLine("frame delta event values");
+        builder.AppendLine("frame delta event values");
+        builder.AppendLine("frame delta event values");
+        builder.AppendLine("frame delta event values");
+        builder.AppendLine("frame delta event values");
+        builder.AppendLine("frame delta event values");
+        builder.AppendLine("frame delta event values");
+        
         MonoSingleton<CheatsController>.Instance.cheatsInfo.text = builder.ToString();        
 
         StartCoroutine(Process());
-    }
-
-    void OneProcess()
-    {
-        MonoSingleton<CheatsManager>.Instance.RenderCheatsInfo();
-        StringBuilder builder = new(MonoSingleton<CheatsController>.Instance.cheatsInfo.text);
-        builder.AppendLine("frame delta event : values");
-        builder.AppendLine("frame delta event : values");
-        builder.AppendLine("frame delta event : values");
-        builder.AppendLine("frame delta event : values");
-        builder.AppendLine("frame delta event : values");
-        builder.AppendLine("frame delta event : values");
-        MonoSingleton<CheatsController>.Instance.cheatsInfo.text = builder.ToString();
     }
 }
