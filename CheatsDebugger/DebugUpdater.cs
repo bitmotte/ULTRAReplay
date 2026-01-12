@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Text;
 using BepInEx.Logging;
 using UnityEngine;
 
@@ -16,10 +17,31 @@ public class DebugUpdater : MonoBehaviour
 
     IEnumerator Process()
     {
-        log.LogInfo("Hello");
-
         yield return new WaitForSeconds(.1f);
 
+        MonoSingleton<CheatsManager>.Instance.RenderCheatsInfo();
+        StringBuilder builder = new(MonoSingleton<CheatsController>.Instance.cheatsInfo.text);
+        builder.AppendLine("frame delta event : values");
+        builder.AppendLine("frame delta event : values");
+        builder.AppendLine("frame delta event : values");
+        builder.AppendLine("frame delta event : values");
+        builder.AppendLine("frame delta event : values");
+        builder.AppendLine("frame delta event : values");
+        MonoSingleton<CheatsController>.Instance.cheatsInfo.text = builder.ToString();        
+
         StartCoroutine(Process());
+    }
+
+    void OneProcess()
+    {
+        MonoSingleton<CheatsManager>.Instance.RenderCheatsInfo();
+        StringBuilder builder = new(MonoSingleton<CheatsController>.Instance.cheatsInfo.text);
+        builder.AppendLine("frame delta event : values");
+        builder.AppendLine("frame delta event : values");
+        builder.AppendLine("frame delta event : values");
+        builder.AppendLine("frame delta event : values");
+        builder.AppendLine("frame delta event : values");
+        builder.AppendLine("frame delta event : values");
+        MonoSingleton<CheatsController>.Instance.cheatsInfo.text = builder.ToString();
     }
 }
