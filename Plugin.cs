@@ -1,6 +1,7 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
+using ULTRAReplay.CheatsDebugger;
 
 namespace ULTRAReplay;
 
@@ -17,5 +18,7 @@ public class Plugin : BaseUnityPlugin
 
         var harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
         harmony.PatchAll();
+
+        RegisterCheats.Register();
     }
 }
