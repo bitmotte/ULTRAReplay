@@ -22,9 +22,8 @@
     <PackageReference Include="UnityEngine.Modules" Version="2022.3.29" IncludeAssets="compile" />
 
     <PackageReference Include="AssetsTools" Version="0.1.2" />
-
     <PackageReference Include="Ultrakill.GameLibs-Stripped" Version="0.0.16-d" />
-    <Reference Include="./Unity.TextMeshPro.dll" /> 
+    <PackageReference Include="bitmotte.com.Unity.TextMeshPro" Version="2022.3.29" />
   </ItemGroup>
   
   <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
