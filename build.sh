@@ -45,5 +45,4 @@ fi
 echo "copying build to ultrakill folders"
 mkdir "${userpath}plugins/ULTRAReplay/"
 cp "./bin/Debug/netstandard2.1/bitmotte.ULTRAReplay.dll" "${userpath}plugins/ULTRAReplay/"
-cp "./resources/icon.png" "${userpath}plugins/ULTRAReplay/"
 echo "done! ! !"
