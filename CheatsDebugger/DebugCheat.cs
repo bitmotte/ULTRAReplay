@@ -6,7 +6,7 @@ internal class DebugCheat : ICheat
 {
     private static GameObject updaterBody;
 
-    public string LongName => "ULTRAReplay Debugger";
+    public string LongName => "ULTRAReplay Debug Recorder";
 
     public string Identifier => "ureplay.debugger";
 
@@ -25,6 +25,7 @@ internal class DebugCheat : ICheat
     public void Disable()
     {
         IsActive = false;
+        Object.Destroy(updaterBody.GetComponent<DebugUpdater>().recorder.gameObject);
         Object.Destroy(updaterBody);
         Plugin.Logger.LogInfo("Debug Cheat Disabled");
     }
