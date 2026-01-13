@@ -9,16 +9,9 @@ public class DebugUpdater : MonoBehaviour
 {
     public ICheat debugCheat;
     static readonly ManualLogSource log = Plugin.Logger;
-    
-    public void Awake()
-    {
-        StartCoroutine(Process());
-    }
 
-    IEnumerator Process()
+    void Update()
     {
-        yield return new WaitForSeconds(.1f);
-
         MonoSingleton<CheatsManager>.Instance.RenderCheatsInfo();
         StringBuilder builder = new(MonoSingleton<CheatsController>.Instance.cheatsInfo.text);
         //this is temporary
@@ -38,8 +31,6 @@ public class DebugUpdater : MonoBehaviour
         builder.AppendLine("frame delta event values");
         builder.AppendLine("frame delta event values");
         
-        MonoSingleton<CheatsController>.Instance.cheatsInfo.text = builder.ToString();        
-
-        StartCoroutine(Process());
+        MonoSingleton<CheatsController>.Instance.cheatsInfo.text = builder.ToString();
     }
 }
