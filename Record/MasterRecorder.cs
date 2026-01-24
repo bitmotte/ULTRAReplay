@@ -1,4 +1,6 @@
+using System.Linq;
 using ULTRAReplay.Replay;
+using ULTRAReplay.Replay.Events;
 using UnityEngine;
 
 namespace ULTRAReplay.Record;
@@ -13,6 +15,7 @@ public class MasterRecorder : MonoBehaviour
 
         ReplayFrame newFrame = new();
         newFrame.delta = Time.deltaTime;
+        newFrame.events.Add(new FullTestEvent());
         timeline.frames.Add(newFrame);
     }
 
@@ -20,6 +23,7 @@ public class MasterRecorder : MonoBehaviour
     {
         ReplayFrame newFrame = new();
         newFrame.delta = Time.deltaTime;
+        newFrame.events.Add(new FullTestEvent());
         timeline.frames.Add(newFrame);
     }
 }

@@ -7,5 +7,5 @@ public class ReplayFrame
 {
     public float delta;
 
-    public List<ReplayEvent> events = [];
+    public List<IReplayEvent> events = [];
 }
