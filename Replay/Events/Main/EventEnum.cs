@@ -6,6 +6,7 @@ public enum EventTypes
 {
     FullTestEvent,
     TinyTestEvent,
+    InitEvent,
     PlayerPositionEvent,
 }
 
@@ -17,6 +18,8 @@ public static class EventEnum
         {
             case EventTypes.PlayerPositionEvent:
                 return "PlayerPos";
+            case EventTypes.InitEvent:
+                return "Init";
             case EventTypes.FullTestEvent:
                 return "FullTest";
             case EventTypes.TinyTestEvent:

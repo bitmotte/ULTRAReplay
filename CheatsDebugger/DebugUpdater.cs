@@ -25,70 +25,95 @@ public class DebugUpdater : MonoBehaviour
         MonoSingleton<CheatsManager>.Instance.RenderCheatsInfo();
         StringBuilder builder = new(MonoSingleton<CheatsController>.Instance.cheatsInfo.text);
         
-        //!!!
-        string numAndDeltaLine = "";
-        numAndDeltaLine += "f : ";
-        int frameCount = recorder.timeline.frames.Count;
-        numAndDeltaLine += frameCount.ToString();
-        numAndDeltaLine += " d : ";
-        numAndDeltaLine += recorder.timeline.frames[frameCount - 1].delta.ToString();
-
-        builder.AppendLine(numAndDeltaLine);
-
-        //!!!
-        string eventCountLine = "  ";
-        eventCountLine += recorder.timeline.frames[frameCount - 1].events.Count;
-        eventCountLine += " events :";
-        builder.AppendLine(eventCountLine);
-        
-        //!!!
-        foreach (IReplayEvent replayEvent in recorder.timeline.frames[frameCount - 1].events)
+        for (int i = 1; i < 4; i++)
         {
-            string eventLine = "    ";
-            eventLine += EventEnum.EventName(replayEvent.EventType);
-            eventLine += " :";
-
-            builder.AppendLine(eventLine);
-
             //!!!
-            foreach (int integer in replayEvent.rawData.integers)
-            {
-                string intLine = "      ";
-                intLine += integer.ToString();
-
-                builder.AppendLine(intLine);
-            }
-
+            string numAndDeltaLine = "";
+            numAndDeltaLine += "f : ";
+            int frameCount = recorder.timeline.frames.Count - i;
+            numAndDeltaLine += frameCount.ToString();
+            numAndDeltaLine += " d : ";
+            numAndDeltaLine += recorder.timeline.frames[frameCount - i].delta.ToString();
+    
+            builder.AppendLine(numAndDeltaLine);
+    
             //!!!
-            foreach (float floatingPoint in replayEvent.rawData.floats)
-            {
-                string floatLine = "      ";
-                floatLine += floatingPoint.ToString();
-
-                builder.AppendLine(floatLine);
-            }
-
+            string eventCountLine = "  ";
+            eventCountLine += recorder.timeline.frames[frameCount - i].events.Count;
+            eventCountLine += " events :";
+            builder.AppendLine(eventCountLine);
+            
             //!!!
-            foreach (Vector3 vector in replayEvent.rawData.vector3s)
+            foreach (IReplayEvent replayEvent in recorder.timeline.frames[frameCount - i].events)
             {
-                string vectorLine = "      ";
-                
-                vectorLine += vector.x.ToString();
-                vectorLine += " ";
-                vectorLine += vector.y.ToString();
-                vectorLine += " ";
-                vectorLine += vector.z.ToString();
+                string eventLine = "    ";
+                eventLine += EventEnum.EventName(replayEvent.EventType);
+                eventLine += " :";
+    
+                builder.AppendLine(eventLine);
+    
+                //!!!
+                foreach (int integer in replayEvent.rawData.integers)
+                {
+                    string intLine = "      ";
+                    intLine += integer.ToString();
+    
+                    builder.AppendLine(intLine);
+                }
+    
+                //!!!
+                foreach (float floatingPoint in replayEvent.rawData.floats)
+                {
+                    string floatLine = "      ";
+                    floatLine += floatingPoint.ToString();
+    
+                    builder.AppendLine(floatLine);
+                }
+    
+                //!!!
+                foreach (Vector3 vector in replayEvent.rawData.vector3s)
+                {
+                    string vectorLine = "      ";
+                    int max = 5;
+                    if(vector.x.ToString().Length > max)
+                    {
+                        vectorLine += vector.x.ToString().Substring(0,max);
+                    } else
+                    {
+                        vectorLine += vector.x.ToString();
+                    }
+                    vectorLine += " ";
+                    
+                    if(vector.y.ToString().Length > max)
+                    {
+                        vectorLine += vector.y.ToString().Substring(0,max);
+                    } else
+                    {
+                        vectorLine += vector.y.ToString();
+                    }
+                    vectorLine += " ";
 
-                builder.AppendLine(vectorLine);
-            }
+                    if(vector.z.ToString().Length > max)
+                    {
+                        vectorLine += vector.z.ToString().Substring(0,max);
+                    } else
+                    {
+                        vectorLine += vector.z.ToString();
+                    }
+    
+                    builder.AppendLine(vectorLine);
+                }
+    
+                //!!!
+                foreach (string stringed in replayEvent.rawData.strings)
+                {
+                    string stringLine = "      ";
+                    stringLine += stringed;
+    
+                    builder.AppendLine(stringLine);
+                }
 
-            //!!!
-            foreach (string stringed in replayEvent.rawData.strings)
-            {
-                string stringLine = "      ";
-                stringLine += stringed;
-
-                builder.AppendLine(stringLine);
+                builder.AppendLine("");
             }
         }
 

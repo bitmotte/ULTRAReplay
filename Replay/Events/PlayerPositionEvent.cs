@@ -6,5 +6,7 @@ public class PlayerPositionEvent : IReplayEvent
 {
     public EventTypes EventType => EventTypes.PlayerPositionEvent;
 
-    public ReplayData rawData => throw new System.NotImplementedException();
+    public ReplayData data = new([],[],[new(0,0,0)],[]);
+
+    public ReplayData rawData => data;
 }
