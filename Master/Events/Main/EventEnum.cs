@@ -1,13 +1,13 @@
 using System;
 
-namespace ULTRAReplay.Replay.Events;
+namespace ULTRAReplay.Master.Events;
 
 public enum EventTypes
 {
     FullTestEvent,
     TinyTestEvent,
     InitEvent,
-    PlayerPositionEvent,
+    ItemPositionEvent,
 }
 
 public static class EventEnum
@@ -16,8 +16,8 @@ public static class EventEnum
     {
         switch (type)
         {
-            case EventTypes.PlayerPositionEvent:
-                return "PlayerPos";
+            case EventTypes.ItemPositionEvent:
+                return "ItemPos";
             case EventTypes.InitEvent:
                 return "Init";
             case EventTypes.FullTestEvent:

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ULTRAReplay.Replay.Data;
+namespace ULTRAReplay.Master.Data;
 
 public class ReplayData(List<int> initIntegers,
                         List<float> initFloats,

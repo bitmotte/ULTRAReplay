@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using ULTRAReplay.Replay.Events;
+using ULTRAReplay.Master.Events;
 
-namespace ULTRAReplay.Replay;
+namespace ULTRAReplay.Master;
 
 public class ReplayFrame
 {

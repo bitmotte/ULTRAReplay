@@ -1,6 +1,6 @@
-using ULTRAReplay.Replay.Data;
+using ULTRAReplay.Master.Data;
 
-namespace ULTRAReplay.Replay.Events;
+namespace ULTRAReplay.Master.Events;
 
 public interface IReplayEvent
 {

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Text;
 using BepInEx.Logging;
 using ULTRAReplay.Record;
-using ULTRAReplay.Replay.Events;
+using ULTRAReplay.Master.Events;
 using UnityEngine;
 
 namespace ULTRAReplay.CheatsDebugger;

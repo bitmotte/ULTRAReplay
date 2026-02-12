@@ -1,3 +1,5 @@
+using ULTRAReplay.Record;
+using ULTRAReplay.Replay;
 using UnityEngine;
 
 namespace ULTRAReplay.CheatsDebugger;
@@ -25,9 +27,12 @@ internal class DebugCheat : ICheat
     public void Disable()
     {
         IsActive = false;
-        Object.Destroy(updaterBody.GetComponent<DebugUpdater>().recorder.gameObject);
+        Plugin.Logger.LogInfo("Debug Cheat Disabled, replaying");
+        MasterRecorder recorder = updaterBody.GetComponent<DebugUpdater>().recorder;
+        MasterReplayer replayer = new();
+        replayer.timeline = recorder.timeline;
+
         Object.Destroy(updaterBody);
-        Plugin.Logger.LogInfo("Debug Cheat Disabled");
     }
 
     public void Enable(CheatsManager manager)

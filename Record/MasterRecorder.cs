@@ -1,8 +1,8 @@
 using System;
+using ULTRAReplay.Master.Events;
 using ULTRAReplay.Record.Recorders;
-using ULTRAReplay.Replay;
-using ULTRAReplay.Replay.Data;
-using ULTRAReplay.Replay.Events;
+using ULTRAReplay.Master;
+using ULTRAReplay.Master.Data;
 using UnityEngine;
 
 namespace ULTRAReplay.Record;
@@ -63,10 +63,11 @@ public class MasterRecorder : MonoBehaviour
     {
         if(recording == true)
         {
-            PlayerPositionEvent newEvent = new PlayerPositionEvent();
-            newEvent.data = data;
+            ItemPositionEvent newEvent = new()
+            {
+                data = data
+            };
             newFrame.events.Add(newEvent);
         }
     }
-    
 }
